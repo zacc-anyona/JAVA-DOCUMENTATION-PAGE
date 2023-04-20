@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,200&family=Orbitron:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+    <title>Technical Documentation Page</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Java OOP Documentation</header>
+      <ul>
+        <li>
+          <a class="nav-link" href="#Introduction">Introduction</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Objects_&_Classes">Objects & Classes</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Inheritance">Inheritance</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Method_Overloading">Method Overloading</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Method_Overriding">Method Overriding</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Super_Keyword">Super Keyword</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Abstract_Class">Abstract Class</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Interface">Interface</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Exception_Handling">Exception Handling</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Multithreading">Multithreading</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Encapsulation">Encapsulation</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Reference">Reference</a>
+        </li>
+      </ul>
+      </a>
+    </nav>
+    <main id="main-doc">
+     <section id="Introduction" class="main-section">
+       <header>Introduction</header>
+       <article>
+         <p>
+           OOP stands for <b>Object Oriented Programming</b>.
+           <br>
+           <br>
+          (OOP) is a programming paradigm that is based on the concept of "objects". In Java, everything is an object, which means that you can create objects that have certain properties (called "attributes" or "fields") and behavior (called "methods").
+          <br>
+          Overall, OOP in Java allows you to create reusable code that is easy to maintain and modify. By encapsulating data and behavior into objects, you can create code that is more organized and easier to understand.
+         </P>
+       </article>
+    </section>
+    <section id="Objects_&_Classes" class="main-section">
+       <header>Objects & Classes</header>
+       <article>
+         <p>
+           In Java, a <b>class</b> is a blueprint or a template that defines the attributes (also known as fields or properties) and behaviors (also known as methods) of a certain type of object.
+           
+         </p>
+         <p>
+           To create a class you use the keyword <b><span class="keyword">class</span></b>:
+           
+           <code>
+             class MyClass {
+                //fields
+               //methods
+             }
+           </code>
+           <code>
+             class MyClass{
+               int x = 5;//field
+               int y = 10;//field
+               int total;//field
+               void display(){//creating method
+                 System.out.println("Your total: " + total);
+               }
+             }
+           </code>
+         </p>
+         <p>
+           An <b>object</b> on the other hand is an instance of a class that has its own unique set of values for its attributes.
+           <code>
+             class MyClass{
+               int x = 5;
+               int y = 10;
+               int total;
+
+               void display() {
+                 ystem.out.println("Your total: " + total);
+               }
+
+               public static void main (String [] args) {
+                 MyClass myObj = new MyClass();//creation of object
+                 myObject.total = myObject.x + myObj.y;
+                 myObject.display();
+               }
+             }
+           </code>
+         </p>
+       </article>
+    </section>
+    <section id="Inheritance" class="main-section">
+       <header>Inheritance</header>
+       <article>
+         <p>
+           Inheritance is a key concept in object-oriented programming that allows you to create new classes that are based on existing classes. In Java, you can use the <b><span class="keyword">extends</span></b> keyword to create a subclass that inherits all the fields and methods of a superclass.
+
+         </p>
+         <p>
+           Here is an example:
+           <code>
+             public class Animal {//This is the superclass
+    private String name;
+    private int age;
+
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void makeSound() {
+        System.out.println("The animal makes a sound");
+    }
+}
+
+public class Dog extends Animal {//This is the subclass
+    private String breed;
+
+    public Dog(String name, int age, String breed) {
+        super(name, age);
+        this.breed = breed;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void makeSound() {
+        System.out.println("The dog barks");
+    }
+}
+           </code>
+In this example, we have defined a superclass called Animal and a subclass called Dog. The Animal class has two fields (name and age) and a method called makeSound(), which prints a message to the console. The Dog class extends the Animal class using the extends keyword and adds a new field (breed) and a new implementation of the makeSound() method.
+         </p>
+         <p>
+           Overall, inheritance is a powerful feature of Java that allows you to create new classes that are based on existing classes, reusing code and reducing duplication.
+         </p>
+       </article>
+    </section>
+    <section id="Method_Overloading" class="main-section">
+       <header>Method Overloading</header>
+       <article>
+         <p>
+           Method overloading is a feature of Java that allows you to define multiple methods with the same name but different parameters. When you call an overloaded method, Java uses the number and types of the arguments to determine which version of the method to invoke.
+         </p>
+         <p>
+           Here is an example:
+           <code>
+             public class Calculator {
+    public int add(int x, int y) {
+        return x + y;
+    }
+
+    public double add(double x, double y) {
+        return x + y;
+    }
+
+    public int add(int x, int y, int z) {
+        return x + y + z;
+    }
+}
+           </code>
+           In this example, we have defined three different versions of the add() method. The first version takes two integers as arguments and returns their sum as an integer. The second version takes two doubles as arguments and returns their sum as a double. The third version takes three integers as arguments and returns their sum as an integer.
+
+When you call the add() method, Java looks at the number and types of the arguments you pass in and chooses the appropriate version of the method to invoke. 
+         </p>
+         <p>
+           Overall, method overloading is a powerful feature of Java that allows you to define multiple versions of a method with the same name but different parameters, making your code more flexible and easier to read.
+         </p>
+       </article>
+    </section>
+    <section id="Method_Overriding" class="main-section">
+       <header>Method Overriding</header>
+       <article>
+         <p>
+           Method overriding is a feature of Java that allows a subclass to provide its own implementation of a method that is already defined in its superclass. The subclass must have the same method signature (i.e., the same name, return type, and parameter types) as the method in the superclass.
+         </p>
+         <p>
+           Here is an example:
+           <code>
+             public class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound");
+    }
+}
+
+public class Dog extends Animal {
+    public void makeSound() {
+        System.out.println("The dog barks");
+    }
+}
+           </code>
+           In this example, we have defined a superclass called Animal and a subclass called Dog. The Animal class has a method called makeSound() that prints a message to the console. The Dog class overrides the makeSound() method using the @Override annotation and provides its own implementation that prints a different message.
+         </p>
+         <p>
+           Overall, method overriding is a powerful feature of Java that allows subclasses to provide their own implementation of methods defined in their superclasses, making it easy to customize the behavior of objects based on their specific types.
+         </p>
+       </article>
+    </section>
+    <section id="Super_Keyword" class="main-section">
+       <header>Super Keyword</header>
+       <article>
+         <p>
+           The <b><span class="keyword">super</span></b> keyword is a reference variable in Java that is used to refer to the parent class of a subclass. It can be used to call a constructor or a method from the parent class, access a variable or method in the parent class, or differentiate between a member variable or method in the subclass and one in the parent class with the same name.
+         </p>
+         <p>
+           Here is an example:
+           <code>
+             public class Animal {
+    private String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+}
+
+public class Dog extends Animal {
+    public Dog(String name) {
+        super(name); // calls the Animal constructor with the specified name
+    }
+}
+
+           </code>
+           In this example, the Dog class extends the Animal class and has a constructor that calls the Animal constructor using the <b><span class="keyword">super</span></b> keyword. This allows the Dog constructor to initialize the name variable in the Animal class.
+         </p>
+         <p>
+           Overall, the super keyword is a useful feature in Java that allows you to access the parent class of a subclass and reuse or customize its functionality as needed.
+         </p>
+       </article>
+    </section>
+    <section id="Abstract_Class" class="main-section">
+       <header>Abstract Class</header>
+       <article>
+         <p>
+           In Java, an abstract class is a class that cannot be instantiated on its own, but is instead intended to be extended by subclasses that provide concrete implementations of its abstract methods. Abstract classes can contain both concrete and abstract methods, and they are often used to provide a common interface or set of functionality for a group of related classes.
+         </p>
+         <p>
+           Here is an example:
+           <code>
+             public abstract class Animal {
+    private String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public abstract void makeSound();
+
+    public void eat() {
+        System.out.println("The animal is eating");
+    }
+}
+           </code>
+           In this example, the Animal class is declared as abstract and contains an abstract method called makeSound(). The makeSound() method has no implementation, but must be defined by any subclass of Animal. The Animal class also has a concrete method called eat() that provides a default implementation.
+         </p>
+         <p>
+           Overall, abstract classes are a useful feature in Java that allows you to define a set of methods and functionality that can be shared by multiple related classes, while still allowing each subclass to provide its own implementation of certain methods.
+         </p>
+       </article>
+    </section>
+    <section id="Interface" class="main-section">
+       <header>Interface</header>
+       <article>
+         <p>
+           In Java, an interface is a collection of abstract methods and constants that define a contract for a class or group of classes to implement. An interface can be thought of as a set of requirements that a class must meet in order to be considered part of a particular group or to be used in a certain way.
+         </p>
+         <p>
+           Here is an example:
+           <code>
+             public interface Animal {
+    public void makeSound();
+    public void move();
+}
+
+           </code>
+           In this example, the Animal interface defines two abstract methods, makeSound() and move(), that any class implementing the Animal interface must provide an implementation for. Note that there is no implementation code in an interface - only method signatures.
+         </p>
+         <p>
+           In addition to abstract methods, interfaces can also contain constants (declared using the final keyword) and default methods (concrete methods with an implementation that can be overridden by implementing classes). Java 8 introduced the concept of functional interfaces, which are interfaces that contain exactly one abstract method and are often used in lambda expressions and method references.
+         </p>
+       </article>
+    </section>
+    <section id="Exception_Handling" class="main-section">
+       <header>Exception Handling</header>
+       <article>
+         <p>
+           Exception handling is a mechanism in Java that allows a program to gracefully handle unexpected or erroneous situations that can arise during program execution. Exceptions are events that occur during the execution of a program that disrupts the normal flow of the program.
+           <br>
+           The <b><span class="keyword">try</span></b> block is used to enclose the code that may throw an exception. The <b><span class="keyword">catch</span></b> block is used to handle the exception that is thrown by the code in the try block. The finally block is used to execute the code that should be executed regardless of whether an exception is thrown or not.
+         </p>
+         <p>
+           Here is an example:
+           <code>
+             import java.util.Scanner;
+
+public class DivideByZero {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int numerator, denominator, result;
+        try {
+            System.out.print("Enter numerator: ");
+            numerator = input.nextInt();
+            System.out.print("Enter denominator: ");
+            denominator = input.nextInt();
+            result = numerator / denominator;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            input.close();
+        }
+    }
+}
+
+           </code>
+           In this example, we use a try-catch-finally block to handle exceptions that may occur during the execution of the program. The user is prompted to enter two integers, and the program attempts to divide the numerator by the denominator.
+
+If the denominator is zero, an ArithmeticException will be thrown, which is caught by the first catch block. If any other exception is thrown, it will be caught by the second catch block.
+
+In the finally block, we close the Scanner object to ensure that system resources are properly released, regardless of whether an exception is thrown or not.
+         </p>
+         <p>
+           By using exception handling, Java programs can gracefully handle errors and unexpected conditions during program execution, which can improve the reliability and stability of the program.
+         </p>
+       </article>
+    </section>
+    <section id="Multithreading" class="main-section">
+       <header>Multithreading</header>
+       <article>
+         <p>
+           Multithreading is a feature in Java that allows a program to execute multiple threads concurrently. Each thread represents a separate path of execution in the program, allowing it to perform multiple tasks simultaneously.
+         </p>
+         <p>
+           Here is an example:
+           <code>
+             public class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread " + Thread.currentThread().getId() + " is running");
+    }
+}
+
+public class MultithreadingExample {
+    public static void main(String[] args) {
+        int numThreads = 5;
+        for (int i = 0; i < numThreads; i++) {
+            MyThread thread = new MyThread();
+            thread.start();
+        }
+    }
+}
+
+           </code>
+           In this example, we define a subclass of Thread called MyThread that overrides the run method to print a message indicating that the thread is running.
+
+In the MultithreadingExample class, we create 5 instances of MyThread and start each thread using the start method. When a thread is started, it calls its run method and begins executing its own path of code.
+         </p>
+         
+       </article>
+    </section>
+    <section id="Encapsulation" class="main-section">
+       <header>Encapsulation</header>
+       <article>
+         <p>
+           Encapsulation is a fundamental principle of object-oriented programming that refers to the practice of hiding the internal details of an object and exposing only the necessary information to the outside world.
+         </p>
+         <p>
+           Here is an example:
+           <code>
+             public class BankAccount {
+    private String accountNumber;
+    private double balance;
+
+    public BankAccount(String accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount > balance) {
+            throw new IllegalArgumentException("Insufficient funds");
+        }
+        balance -= amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+           </code>
+           In this example, we define a BankAccount class with private member variables accountNumber and balance. The deposit and withdraw methods are public, which allows external code to interact with the object and modify its state in a controlled manner.
+
+However, the internal details of the object (i.e. its account number and balance) are hidden from external code, which helps to ensure that the object is used in a consistent and predictable way.
+         </p>
+         <p>
+           By using encapsulation to hide the internal details of an object, we can improve the maintainability, extensibility, and robustness of our code.
+         </p>
+       </article>
+    </section>
+    <section id="Reference" class="main-section">
+       <header>Reference</header>
+       <article>
+         <p>
+           This documentation is not that comprehensive, you could refer to the following sources:
+           <ul class="ref-link">
+             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">MDN</a></li>
+             <li><a href="https://www.w3schools.com/java/java_oop.asp">W3SCHOOLS</a></li>
+             <li><a href="https://www.javatpoint.com/java-oops-concepts">JAVAT POINT</a></li>
+             <li><a href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/">GEEKS FOR GEEKS</a></li>
+             <li><a href="https://www.mygreatlearning.com/blog/oops-concepts-in-java/">GREAT LEARNING</a></li>
+          <ul>
+         </p>
+       </article>
+    </section> 
+    </main>
+  </body>
+</html>
